@@ -95,3 +95,4 @@ C:\Users\KeneT\Desktop\farmer_market_api\farmer_market_api\obj\Debug\net10.0\ref
 C:\Users\KeneT\Desktop\farmer_market_api\farmer_market_api\obj\Debug\net10.0\farmer_market_api.pdb
 C:\Users\KeneT\Desktop\farmer_market_api\farmer_market_api\obj\Debug\net10.0\farmer_market_api.genruntimeconfig.cache
 C:\Users\KeneT\Desktop\farmer_market_api\farmer_market_api\obj\Debug\net10.0\ref\farmer_market_api.dll
+C:\Users\KeneT\Desktop\farmer_market_api\farmer_market_api\obj\Debug\net10.0\farmer_market_api.sourcelink.json

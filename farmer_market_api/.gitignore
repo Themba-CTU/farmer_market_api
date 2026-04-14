@@ -1,0 +1,61 @@
+### Visual Studio / .NET general ignores
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.userprefs
+*.sln.docstates
+
+# Visual Studio directories
+.vs/
+.vscode/
+.idea/
+
+# Build results
+[Bb]in/
+[Oo]bj/
+out/
+artifacts/
+publish/
+
+# Static web assets and caches
+staticwebassets.build.json
+staticwebassets.development.json
+*.staticwebassets*
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Rider
+/.idea/
+
+# Test results
+TestResults/
+*.trx
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+wwwroot/node_modules/
+
+# Database files
+*.db
+*.sqlite
+*.db-shm
+*.db-wal
+
+# publish output
+/publish
+
+# Visual Studio Code workspace history
+.history/
+
+# Coverage and profiling
+coverage/
+*.coverage
+*.coveragexml
