@@ -16,7 +16,7 @@ namespace farmer_market_api.Controllers
         {
             "John Doe",
             "Jane Smith",
-            "Bob Johnson"
+            "Bob Johnson",
             "Alice Williams"
         };
         [HttpGet]
