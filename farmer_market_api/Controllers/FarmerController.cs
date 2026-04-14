@@ -17,6 +17,7 @@ namespace farmer_market_api.Controllers
             "John Doe",
             "Jane Smith",
             "Bob Johnson"
+            "Alice Williams"
         };
         [HttpGet]
         public List<string> GetListOffFarmers()
