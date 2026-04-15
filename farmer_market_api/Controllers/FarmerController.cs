@@ -11,53 +11,62 @@ namespace farmer_market_api.Controllers
     [Route("api/[controller]")]
     public class FarmerController : ControllerBase
     {
-
-        private List<string> farmers = new List<string>
+        private List<Farmer> farmers = new List<Farmer>
         {
-            "John Doe",
-            "Jane Smith",
-            "Bob Johnson",
-            "Alice Williams"
+            new Farmer(1, "John Doe", "john.doe@example.com", "123-456-7890", "123 Main St", "Ontario", 4.5, true),
+            new Farmer(2, "Jane Smith", "jane.smith@example.com", "098-765-4321", "456 Oak Ave", "Quebec", 4.0, true),
+            new Farmer(3,"Bob Johnson", "bob.johnson@example.com", "555-555-5555", "789 Pine Rd", "Alberta", 4.8, true),
+            new Farmer(4, "Alice Williams", "alice.williams@example.com", "111-111-1111", "321 Elm St", "BC", 4.2, true)
         };
+
         [HttpGet]
-        public List<string> GetListOffFarmers()
+        public List<Farmer> GetListOfFarmers()
         {
             return farmers;
         }
+
         [HttpPost]
-        public List<string> createFarmer([FromBody] string name)
+        public List<Farmer> CreateFarmer([FromBody] Farmer farmer)
         {
-            farmers.Add(name);
+            farmers.Add(farmer);
             return farmers;
         }
 
         [HttpDelete]
-        public List<string> Delete([FromQuery]string name)
+        public List<Farmer> Delete([FromQuery] string name)
         {
-            if (farmers.Contains(name))
+            var farmer = farmers.FirstOrDefault(f => f.Name == name);
+
+            if (farmer != null)
             {
-                farmers.Remove(name);
-                return farmers;
+                farmers.Remove(farmer);
             }
-            else            
-            {
-                return farmers;
-            }
+
+            return farmers;
         }
 
         [HttpPut]
-        public List<string> updateFarmers([FromBody] UpdateRequest request)
+        public List<Farmer> UpdateFarmers([FromBody] Farmer updatedFarmer)
         {
-            if (farmers.Contains(request.OldName))
+            var farmer = farmers.FirstOrDefault(f => f.Name == updatedFarmer.Name);
+
+            if (farmer != null)
             {
-                var index = farmers.IndexOf(request.OldName);
-                farmers[index] = request.NewName;
-                return farmers;
+                var index = farmers.IndexOf(farmer);
+
+                farmers[index] = new Farmer
+                {
+                    Name = updatedFarmer.Name,
+                    Email = updatedFarmer.Email,
+                    Phone = updatedFarmer.Phone,
+                    Address = updatedFarmer.Address,
+                    Province = updatedFarmer.Province,
+                    Rating = updatedFarmer.Rating,
+                    IsAvailable = updatedFarmer.IsAvailable
+                };
             }
-            else
-            {
-                return farmers;
-            }
+
+            return farmers;
         }
     }
 }
